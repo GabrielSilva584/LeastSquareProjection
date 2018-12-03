@@ -1,0 +1,42 @@
+***********************************************************
+Authors: - Gabriel Martins Silva - gabriel10.silva@usp.br 
+         - Matheus Araujo Jorge - mat.jorge1@gmail.com
+***********************************************************
+
+
+This is an implementation of the LSP (Least Square Projection) algorithm, proposed by Paulovich et al.[1]. Since the main goal of this implementation is the data visualization, we only project the point to 2D.
+
+This was made in the R language and be used with any visualization library you prefer. Below you can find a brief description of the function and how it is supposed to be used.
+
+Requirements: 
+
+The function depends on the libraries 'MASS', 'FNN' e 'kmed'.
+
+Function: lsp
+
+The lsp function recieves a data.frame with more than 2 columns of data and returns the projected points in a two-dimensional space.
+
+Arguments: 
+
+-> data: data.frame containing the multidimensional data you want to project.
+
+Return:
+
+-> X: list containing the projets points(X$points) and the control points used	(X$medoids).
+
+
+Script usage:
+
+-> Command line format: Rscript LSP.r ["in.csv" ["out.pdf"]]
+   [] -> optional
+   
+Arguments:
+
+-> "in.csv": input file containing the desired data.frame
+-> "out.pdf": output file for graphical results (default value: "plot.pdf")
+
+If no arguments are present, the script will use two sample data.frames ("mtcars" and "iris")
+
+
+References
+[1] F. V. Paulovich, L. G. Nonato, R. Minghim and H. Levkowitz, "Least Square Projection: A Fast High-Precision Multidimensional Projection Technique and Its Application to Document Mapping," in IEEE Transactions on Visualization and Computer Graphics, vol. 14, no. 3, pp. 564-575, May-June 2008. doi: 10.1109/TVCG.2007.70443
